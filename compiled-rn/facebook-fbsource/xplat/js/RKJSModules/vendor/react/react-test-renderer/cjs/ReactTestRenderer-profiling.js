@@ -7,7 +7,7 @@
  * @noflow
  * @nolint
  * @preventMunge
- * @generated SignedSource<<fcac9927d5b7a28a989ec296aac02801>>
+ * @generated SignedSource<<b1e65ee86653687e441004c7bf45f8a2>>
  */
 
 "use strict";
@@ -9862,10 +9862,12 @@ function performWorkOnRoot(root$jscomp$0, lanes, forceSync) {
               JSCompiler_inline_result,
               !1
             );
-            if (
-              2 !== JSCompiler_inline_result &&
-              6 !== JSCompiler_inline_result
-            ) {
+            if (6 === JSCompiler_inline_result)
+              root.errorRecoveryDisabledLanes =
+                root.errorRecoveryDisabledLanes |
+                renderWasConcurrent |
+                workInProgressDeferredLane;
+            else if (2 !== JSCompiler_inline_result) {
               if (workInProgressRootDidAttachPingListener) {
                 root.errorRecoveryDisabledLanes |= renderWasConcurrent;
                 workInProgressRootInterleavedUpdatedLanes |=
@@ -11733,12 +11735,12 @@ function wrapFiber(fiber) {
     fiberToWrapper.set(fiber, wrapper));
   return wrapper;
 }
-var internals$jscomp$inline_1316 = {
+var internals$jscomp$inline_1320 = {
   bundleType: 0,
-  version: "19.3.0-native-fb-7c6ac13e-20260929",
+  version: "19.3.0-native-fb-278794d7-20261002",
   rendererPackageName: "react-test-renderer",
   currentDispatcherRef: ReactSharedInternals,
-  reconcilerVersion: "19.3.0-native-fb-7c6ac13e-20260929",
+  reconcilerVersion: "19.3.0-native-fb-278794d7-20261002",
   getLaneLabelMap: function () {
     for (
       var map = new Map(), lane = 1, index$160 = 0;
@@ -11756,16 +11758,16 @@ var internals$jscomp$inline_1316 = {
   }
 };
 if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
-  var hook$jscomp$inline_1618 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
+  var hook$jscomp$inline_1627 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
   if (
-    !hook$jscomp$inline_1618.isDisabled &&
-    hook$jscomp$inline_1618.supportsFiber
+    !hook$jscomp$inline_1627.isDisabled &&
+    hook$jscomp$inline_1627.supportsFiber
   )
     try {
-      (rendererID = hook$jscomp$inline_1618.inject(
-        internals$jscomp$inline_1316
+      (rendererID = hook$jscomp$inline_1627.inject(
+        internals$jscomp$inline_1320
       )),
-        (injectedHook = hook$jscomp$inline_1618);
+        (injectedHook = hook$jscomp$inline_1627);
     } catch (err) {}
 }
 exports._Scheduler = Scheduler;
@@ -11889,4 +11891,4 @@ exports.unstable_batchedUpdates = function (fn, a) {
         flushSyncWorkAcrossRoots_impl(0, !0));
   }
 };
-exports.version = "19.3.0-native-fb-7c6ac13e-20260929";
+exports.version = "19.3.0-native-fb-278794d7-20261002";

@@ -7,7 +7,7 @@
  * @noflow
  * @nolint
  * @preventMunge
- * @generated SignedSource<<acb37d6c1fb0bda400fc9e45ce1e3cb3>>
+ * @generated SignedSource<<4c515fb9f9ad7446d8a02a8e950a4992>>
  */
 
 "use strict";
@@ -14996,10 +14996,12 @@ __DEV__ &&
                 exitStatus = workInProgressRootConcurrentErrors;
                 var wasRootDehydrated = supportsHydration;
                 startTime = renderRootSync(yieldedFiber, startTime, !1);
-                if (
-                  startTime !== RootErrored &&
-                  startTime !== RootSuspendedAtTheShell
-                ) {
+                if (startTime === RootSuspendedAtTheShell)
+                  yieldedFiber.errorRecoveryDisabledLanes =
+                    yieldedFiber.errorRecoveryDisabledLanes |
+                    lanesThatJustErrored |
+                    workInProgressDeferredLane;
+                else if (startTime !== RootErrored) {
                   if (
                     workInProgressRootDidAttachPingListener &&
                     !wasRootDehydrated
@@ -21397,10 +21399,10 @@ __DEV__ &&
     (function () {
       var internals = {
         bundleType: 1,
-        version: "19.3.0-native-fb-7c6ac13e-20260929",
+        version: "19.3.0-native-fb-278794d7-20261002",
         rendererPackageName: "react-native-renderer",
         currentDispatcherRef: ReactSharedInternals,
-        reconcilerVersion: "19.3.0-native-fb-7c6ac13e-20260929"
+        reconcilerVersion: "19.3.0-native-fb-278794d7-20261002"
       };
       null !== extraDevToolsConfig &&
         (internals.rendererConfig = extraDevToolsConfig);

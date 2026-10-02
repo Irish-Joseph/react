@@ -7,7 +7,7 @@
  * @noflow
  * @nolint
  * @preventMunge
- * @generated SignedSource<<877f33e90d829cd77e83c3bad2889d56>>
+ * @generated SignedSource<<6027a21f43aa7d7064eaf0954bb141db>>
  */
 
 "use strict";
@@ -1280,7 +1280,7 @@ eventPluginOrder = Array.prototype.slice.call([
   "ReactNativeBridgeEventPlugin"
 ]);
 recomputePluginOrdering();
-var injectedNamesToPlugins$jscomp$inline_294 = {
+var injectedNamesToPlugins$jscomp$inline_295 = {
     ResponderEventPlugin: ResponderEventPlugin,
     ReactNativeBridgeEventPlugin: {
       eventTypes: {},
@@ -1326,32 +1326,32 @@ var injectedNamesToPlugins$jscomp$inline_294 = {
       }
     }
   },
-  isOrderingDirty$jscomp$inline_295 = !1,
-  pluginName$jscomp$inline_296;
-for (pluginName$jscomp$inline_296 in injectedNamesToPlugins$jscomp$inline_294)
+  isOrderingDirty$jscomp$inline_296 = !1,
+  pluginName$jscomp$inline_297;
+for (pluginName$jscomp$inline_297 in injectedNamesToPlugins$jscomp$inline_295)
   if (
-    injectedNamesToPlugins$jscomp$inline_294.hasOwnProperty(
-      pluginName$jscomp$inline_296
+    injectedNamesToPlugins$jscomp$inline_295.hasOwnProperty(
+      pluginName$jscomp$inline_297
     )
   ) {
-    var pluginModule$jscomp$inline_297 =
-      injectedNamesToPlugins$jscomp$inline_294[pluginName$jscomp$inline_296];
+    var pluginModule$jscomp$inline_298 =
+      injectedNamesToPlugins$jscomp$inline_295[pluginName$jscomp$inline_297];
     if (
-      !namesToPlugins.hasOwnProperty(pluginName$jscomp$inline_296) ||
-      namesToPlugins[pluginName$jscomp$inline_296] !==
-        pluginModule$jscomp$inline_297
+      !namesToPlugins.hasOwnProperty(pluginName$jscomp$inline_297) ||
+      namesToPlugins[pluginName$jscomp$inline_297] !==
+        pluginModule$jscomp$inline_298
     ) {
-      if (namesToPlugins[pluginName$jscomp$inline_296])
+      if (namesToPlugins[pluginName$jscomp$inline_297])
         throw Error(
           "EventPluginRegistry: Cannot inject two different event plugins using the same name, `" +
-            (pluginName$jscomp$inline_296 + "`.")
+            (pluginName$jscomp$inline_297 + "`.")
         );
-      namesToPlugins[pluginName$jscomp$inline_296] =
-        pluginModule$jscomp$inline_297;
-      isOrderingDirty$jscomp$inline_295 = !0;
+      namesToPlugins[pluginName$jscomp$inline_297] =
+        pluginModule$jscomp$inline_298;
+      isOrderingDirty$jscomp$inline_296 = !0;
     }
   }
-isOrderingDirty$jscomp$inline_295 && recomputePluginOrdering();
+isOrderingDirty$jscomp$inline_296 && recomputePluginOrdering();
 function batchedUpdatesImpl(fn, bookkeeping) {
   return fn(bookkeeping);
 }
@@ -10607,10 +10607,12 @@ function performWorkOnRoot(root$jscomp$0, lanes, forceSync) {
               JSCompiler_inline_result,
               !1
             );
-            if (
-              2 !== JSCompiler_inline_result &&
-              6 !== JSCompiler_inline_result
-            ) {
+            if (6 === JSCompiler_inline_result)
+              root.errorRecoveryDisabledLanes =
+                root.errorRecoveryDisabledLanes |
+                renderWasConcurrent |
+                workInProgressDeferredLane;
+            else if (2 !== JSCompiler_inline_result) {
               if (workInProgressRootDidAttachPingListener) {
                 root.errorRecoveryDisabledLanes |= renderWasConcurrent;
                 workInProgressRootInterleavedUpdatedLanes |=
@@ -12474,26 +12476,26 @@ batchedUpdatesImpl = function (fn, a) {
   }
 };
 var roots = new Map(),
-  internals$jscomp$inline_1344 = {
+  internals$jscomp$inline_1348 = {
     bundleType: 0,
-    version: "19.3.0-native-fb-7c6ac13e-20260929",
+    version: "19.3.0-native-fb-278794d7-20261002",
     rendererPackageName: "react-native-renderer",
     currentDispatcherRef: ReactSharedInternals,
-    reconcilerVersion: "19.3.0-native-fb-7c6ac13e-20260929"
+    reconcilerVersion: "19.3.0-native-fb-278794d7-20261002"
   };
 null !== extraDevToolsConfig &&
-  (internals$jscomp$inline_1344.rendererConfig = extraDevToolsConfig);
+  (internals$jscomp$inline_1348.rendererConfig = extraDevToolsConfig);
 if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
-  var hook$jscomp$inline_1682 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
+  var hook$jscomp$inline_1691 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
   if (
-    !hook$jscomp$inline_1682.isDisabled &&
-    hook$jscomp$inline_1682.supportsFiber
+    !hook$jscomp$inline_1691.isDisabled &&
+    hook$jscomp$inline_1691.supportsFiber
   )
     try {
-      (rendererID = hook$jscomp$inline_1682.inject(
-        internals$jscomp$inline_1344
+      (rendererID = hook$jscomp$inline_1691.inject(
+        internals$jscomp$inline_1348
       )),
-        (injectedHook = hook$jscomp$inline_1682);
+        (injectedHook = hook$jscomp$inline_1691);
     } catch (err) {}
 }
 exports.createPortal = function (children, containerTag) {

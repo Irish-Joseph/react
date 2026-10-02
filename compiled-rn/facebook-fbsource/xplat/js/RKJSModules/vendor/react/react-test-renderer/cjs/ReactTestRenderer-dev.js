@@ -7,13 +7,13 @@
  * @noflow
  * @nolint
  * @preventMunge
- * @generated SignedSource<<dc1b82966dc5e817143142fd036051ea>>
+ * @generated SignedSource<<8285087bac5387ecbf2d06642aae6cf5>>
  */
 
 "use strict";
 __DEV__ &&
   (function () {
-    function JSCompiler_object_inline_createNodeMock_1199() {
+    function JSCompiler_object_inline_createNodeMock_1203() {
       return null;
     }
     function findHook(fiber, id) {
@@ -12620,10 +12620,12 @@ __DEV__ &&
                   renderWasConcurrent,
                   !1
                 );
-                if (
-                  renderWasConcurrent !== RootErrored &&
-                  renderWasConcurrent !== RootSuspendedAtTheShell
-                ) {
+                if (renderWasConcurrent === RootSuspendedAtTheShell)
+                  exitStatus.errorRecoveryDisabledLanes =
+                    exitStatus.errorRecoveryDisabledLanes |
+                    originallyAttemptedLanes |
+                    workInProgressDeferredLane;
+                else if (renderWasConcurrent !== RootErrored) {
                   if (workInProgressRootDidAttachPingListener) {
                     exitStatus.errorRecoveryDisabledLanes |=
                       originallyAttemptedLanes;
@@ -17146,10 +17148,10 @@ __DEV__ &&
     (function () {
       var internals = {
         bundleType: 1,
-        version: "19.3.0-native-fb-7c6ac13e-20260929",
+        version: "19.3.0-native-fb-278794d7-20261002",
         rendererPackageName: "react-test-renderer",
         currentDispatcherRef: ReactSharedInternals,
-        reconcilerVersion: "19.3.0-native-fb-7c6ac13e-20260929"
+        reconcilerVersion: "19.3.0-native-fb-278794d7-20261002"
       };
       internals.overrideHookState = overrideHookState;
       internals.overrideHookStateDeletePath = overrideHookStateDeletePath;
@@ -17172,7 +17174,7 @@ __DEV__ &&
     exports._Scheduler = Scheduler;
     exports.act = act;
     exports.create = function (element, options) {
-      var createNodeMock = JSCompiler_object_inline_createNodeMock_1199,
+      var createNodeMock = JSCompiler_object_inline_createNodeMock_1203,
         isConcurrent = !1,
         isStrictMode = !1;
       "object" === typeof options &&
@@ -17295,5 +17297,5 @@ __DEV__ &&
             flushSyncWorkAcrossRoots_impl(0, !0));
       }
     };
-    exports.version = "19.3.0-native-fb-7c6ac13e-20260929";
+    exports.version = "19.3.0-native-fb-278794d7-20261002";
   })();

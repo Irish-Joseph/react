@@ -7,7 +7,7 @@
  * @noflow
  * @nolint
  * @preventMunge
- * @generated SignedSource<<0e58da620f2c6c54237844a1bb5868ea>>
+ * @generated SignedSource<<00e9063dbe3dc4a32a293823e4ebdac2>>
  */
 
 "use strict";
@@ -9359,10 +9359,12 @@ function performWorkOnRoot(root$jscomp$0, lanes, forceSync) {
               JSCompiler_inline_result,
               !1
             );
-            if (
-              2 !== JSCompiler_inline_result &&
-              6 !== JSCompiler_inline_result
-            ) {
+            if (6 === JSCompiler_inline_result)
+              root.errorRecoveryDisabledLanes =
+                root.errorRecoveryDisabledLanes |
+                renderWasConcurrent |
+                workInProgressDeferredLane;
+            else if (2 !== JSCompiler_inline_result) {
               if (workInProgressRootDidAttachPingListener) {
                 root.errorRecoveryDisabledLanes |= renderWasConcurrent;
                 workInProgressRootInterleavedUpdatedLanes |=
@@ -11094,24 +11096,24 @@ function wrapFiber(fiber) {
     fiberToWrapper.set(fiber, wrapper));
   return wrapper;
 }
-var internals$jscomp$inline_1552 = {
+var internals$jscomp$inline_1561 = {
   bundleType: 0,
-  version: "19.3.0-native-fb-7c6ac13e-20260929",
+  version: "19.3.0-native-fb-278794d7-20261002",
   rendererPackageName: "react-test-renderer",
   currentDispatcherRef: ReactSharedInternals,
-  reconcilerVersion: "19.3.0-native-fb-7c6ac13e-20260929"
+  reconcilerVersion: "19.3.0-native-fb-278794d7-20261002"
 };
 if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
-  var hook$jscomp$inline_1553 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
+  var hook$jscomp$inline_1562 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
   if (
-    !hook$jscomp$inline_1553.isDisabled &&
-    hook$jscomp$inline_1553.supportsFiber
+    !hook$jscomp$inline_1562.isDisabled &&
+    hook$jscomp$inline_1562.supportsFiber
   )
     try {
-      (rendererID = hook$jscomp$inline_1553.inject(
-        internals$jscomp$inline_1552
+      (rendererID = hook$jscomp$inline_1562.inject(
+        internals$jscomp$inline_1561
       )),
-        (injectedHook = hook$jscomp$inline_1553);
+        (injectedHook = hook$jscomp$inline_1562);
     } catch (err) {}
 }
 exports._Scheduler = Scheduler;
@@ -11235,4 +11237,4 @@ exports.unstable_batchedUpdates = function (fn, a) {
         flushSyncWorkAcrossRoots_impl(0, !0));
   }
 };
-exports.version = "19.3.0-native-fb-7c6ac13e-20260929";
+exports.version = "19.3.0-native-fb-278794d7-20261002";

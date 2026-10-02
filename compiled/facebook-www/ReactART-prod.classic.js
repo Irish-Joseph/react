@@ -10105,10 +10105,12 @@ function performWorkOnRoot(root$jscomp$0, lanes, forceSync) {
               JSCompiler_inline_result,
               !1
             );
-            if (
-              2 !== JSCompiler_inline_result &&
-              6 !== JSCompiler_inline_result
-            ) {
+            if (6 === JSCompiler_inline_result)
+              root.errorRecoveryDisabledLanes =
+                root.errorRecoveryDisabledLanes |
+                renderWasConcurrent |
+                workInProgressDeferredLane;
+            else if (2 !== JSCompiler_inline_result) {
               if (workInProgressRootDidAttachPingListener) {
                 root.errorRecoveryDisabledLanes |= renderWasConcurrent;
                 workInProgressRootInterleavedUpdatedLanes |=
@@ -11747,24 +11749,24 @@ var slice = Array.prototype.slice,
     };
     return Text;
   })(React.Component);
-var internals$jscomp$inline_1601 = {
+var internals$jscomp$inline_1610 = {
   bundleType: 0,
-  version: "19.3.0-www-classic-7c6ac13e-20260929",
+  version: "19.3.0-www-classic-278794d7-20261002",
   rendererPackageName: "react-art",
   currentDispatcherRef: ReactSharedInternals,
-  reconcilerVersion: "19.3.0-www-classic-7c6ac13e-20260929"
+  reconcilerVersion: "19.3.0-www-classic-278794d7-20261002"
 };
 if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
-  var hook$jscomp$inline_1602 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
+  var hook$jscomp$inline_1611 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
   if (
-    !hook$jscomp$inline_1602.isDisabled &&
-    hook$jscomp$inline_1602.supportsFiber
+    !hook$jscomp$inline_1611.isDisabled &&
+    hook$jscomp$inline_1611.supportsFiber
   )
     try {
-      (rendererID = hook$jscomp$inline_1602.inject(
-        internals$jscomp$inline_1601
+      (rendererID = hook$jscomp$inline_1611.inject(
+        internals$jscomp$inline_1610
       )),
-        (injectedHook = hook$jscomp$inline_1602);
+        (injectedHook = hook$jscomp$inline_1611);
     } catch (err) {}
 }
 var Path = Mode$1.Path;
@@ -11778,4 +11780,4 @@ exports.RadialGradient = RadialGradient;
 exports.Shape = TYPES.SHAPE;
 exports.Surface = Surface;
 exports.Text = Text;
-exports.version = "19.3.0-www-classic-7c6ac13e-20260929";
+exports.version = "19.3.0-www-classic-278794d7-20261002";

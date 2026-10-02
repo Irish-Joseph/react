@@ -17302,10 +17302,13 @@ __DEV__ &&
                   errorRetryLanes,
                   !1
                 );
-                if (
-                  errorRetryLanes !== RootErrored &&
-                  errorRetryLanes !== RootSuspendedAtTheShell
-                ) {
+                if (errorRetryLanes === RootSuspendedAtTheShell)
+                  wasRootDehydrated ||
+                    (yieldedFiber.errorRecoveryDisabledLanes =
+                      yieldedFiber.errorRecoveryDisabledLanes |
+                      startTime |
+                      workInProgressDeferredLane);
+                else if (errorRetryLanes !== RootErrored) {
                   if (
                     workInProgressRootDidAttachPingListener &&
                     !wasRootDehydrated
@@ -23217,7 +23220,7 @@ __DEV__ &&
         version: rendererVersion,
         rendererPackageName: rendererPackageName,
         currentDispatcherRef: ReactSharedInternals,
-        reconcilerVersion: "19.3.0-www-modern-7c6ac13e-20260929"
+        reconcilerVersion: "19.3.0-www-modern-278794d7-20261002"
       };
       null !== extraDevToolsConfig &&
         (internals.rendererConfig = extraDevToolsConfig);

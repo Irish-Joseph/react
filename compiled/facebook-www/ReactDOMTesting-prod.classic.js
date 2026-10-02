@@ -13179,10 +13179,13 @@ function performWorkOnRoot(root$jscomp$0, lanes, forceSync) {
               JSCompiler_inline_result,
               !1
             );
-            if (
-              2 !== JSCompiler_inline_result &&
-              6 !== JSCompiler_inline_result
-            ) {
+            if (6 === JSCompiler_inline_result)
+              wasRootDehydrated ||
+                (root.errorRecoveryDisabledLanes =
+                  root.errorRecoveryDisabledLanes |
+                  renderWasConcurrent |
+                  workInProgressDeferredLane);
+            else if (2 !== JSCompiler_inline_result) {
               if (
                 workInProgressRootDidAttachPingListener &&
                 !wasRootDehydrated
@@ -15987,20 +15990,20 @@ function debounceScrollEnd(targetInst, nativeEvent, nativeEventTarget) {
     (nativeEventTarget[internalScrollTimer] = targetInst));
 }
 for (
-  var i$jscomp$inline_1841 = 0;
-  i$jscomp$inline_1841 < simpleEventPluginEvents.length;
-  i$jscomp$inline_1841++
+  var i$jscomp$inline_1845 = 0;
+  i$jscomp$inline_1845 < simpleEventPluginEvents.length;
+  i$jscomp$inline_1845++
 ) {
-  var eventName$jscomp$inline_1842 =
-      simpleEventPluginEvents[i$jscomp$inline_1841],
-    domEventName$jscomp$inline_1843 =
-      eventName$jscomp$inline_1842.toLowerCase(),
-    capitalizedEvent$jscomp$inline_1844 =
-      eventName$jscomp$inline_1842[0].toUpperCase() +
-      eventName$jscomp$inline_1842.slice(1);
+  var eventName$jscomp$inline_1846 =
+      simpleEventPluginEvents[i$jscomp$inline_1845],
+    domEventName$jscomp$inline_1847 =
+      eventName$jscomp$inline_1846.toLowerCase(),
+    capitalizedEvent$jscomp$inline_1848 =
+      eventName$jscomp$inline_1846[0].toUpperCase() +
+      eventName$jscomp$inline_1846.slice(1);
   registerSimpleEvent(
-    domEventName$jscomp$inline_1843,
-    "on" + capitalizedEvent$jscomp$inline_1844
+    domEventName$jscomp$inline_1847,
+    "on" + capitalizedEvent$jscomp$inline_1848
   );
 }
 registerSimpleEvent(ANIMATION_CANCEL, "onAnimationCancel");
@@ -21081,16 +21084,16 @@ function getCrossOriginStringAs(as, input) {
   if ("string" === typeof input)
     return "use-credentials" === input ? input : "";
 }
-var isomorphicReactPackageVersion$jscomp$inline_2096 = React.version;
+var isomorphicReactPackageVersion$jscomp$inline_2100 = React.version;
 if (
-  "19.3.0-www-classic-7c6ac13e-20260929" !==
-  isomorphicReactPackageVersion$jscomp$inline_2096
+  "19.3.0-www-classic-278794d7-20261002" !==
+  isomorphicReactPackageVersion$jscomp$inline_2100
 )
   throw Error(
     formatProdErrorMessage(
       527,
-      isomorphicReactPackageVersion$jscomp$inline_2096,
-      "19.3.0-www-classic-7c6ac13e-20260929"
+      isomorphicReactPackageVersion$jscomp$inline_2100,
+      "19.3.0-www-classic-278794d7-20261002"
     )
   );
 Internals.findDOMNode = function (componentOrElement) {
@@ -21106,24 +21109,24 @@ Internals.Events = [
     return fn(a);
   }
 ];
-var internals$jscomp$inline_2638 = {
+var internals$jscomp$inline_2647 = {
   bundleType: 0,
-  version: "19.3.0-www-classic-7c6ac13e-20260929",
+  version: "19.3.0-www-classic-278794d7-20261002",
   rendererPackageName: "react-dom",
   currentDispatcherRef: ReactSharedInternals,
-  reconcilerVersion: "19.3.0-www-classic-7c6ac13e-20260929"
+  reconcilerVersion: "19.3.0-www-classic-278794d7-20261002"
 };
 if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
-  var hook$jscomp$inline_2639 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
+  var hook$jscomp$inline_2648 = __REACT_DEVTOOLS_GLOBAL_HOOK__;
   if (
-    !hook$jscomp$inline_2639.isDisabled &&
-    hook$jscomp$inline_2639.supportsFiber
+    !hook$jscomp$inline_2648.isDisabled &&
+    hook$jscomp$inline_2648.supportsFiber
   )
     try {
-      (rendererID = hook$jscomp$inline_2639.inject(
-        internals$jscomp$inline_2638
+      (rendererID = hook$jscomp$inline_2648.inject(
+        internals$jscomp$inline_2647
       )),
-        (injectedHook = hook$jscomp$inline_2639);
+        (injectedHook = hook$jscomp$inline_2648);
     } catch (err) {}
 }
 function defaultOnDefaultTransitionIndicator() {
@@ -21703,4 +21706,4 @@ exports.useFormState = function (action, initialState, permalink) {
 exports.useFormStatus = function () {
   return ReactSharedInternals.H.useHostTransitionStatus();
 };
-exports.version = "19.3.0-www-classic-7c6ac13e-20260929";
+exports.version = "19.3.0-www-classic-278794d7-20261002";

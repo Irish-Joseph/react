@@ -15369,10 +15369,12 @@ __DEV__ &&
                   renderWasConcurrent,
                   !1
                 );
-                if (
-                  renderWasConcurrent !== RootErrored &&
-                  renderWasConcurrent !== RootSuspendedAtTheShell
-                ) {
+                if (renderWasConcurrent === RootSuspendedAtTheShell)
+                  yieldedFiber.errorRecoveryDisabledLanes =
+                    yieldedFiber.errorRecoveryDisabledLanes |
+                    lanesThatJustErrored |
+                    workInProgressDeferredLane;
+                else if (renderWasConcurrent !== RootErrored) {
                   if (workInProgressRootDidAttachPingListener) {
                     yieldedFiber.errorRecoveryDisabledLanes |=
                       lanesThatJustErrored;
@@ -20657,10 +20659,10 @@ __DEV__ &&
     (function () {
       var internals = {
         bundleType: 1,
-        version: "19.3.0-www-classic-7c6ac13e-20260929",
+        version: "19.3.0-www-classic-278794d7-20261002",
         rendererPackageName: "react-art",
         currentDispatcherRef: ReactSharedInternals,
-        reconcilerVersion: "19.3.0-www-classic-7c6ac13e-20260929"
+        reconcilerVersion: "19.3.0-www-classic-278794d7-20261002"
       };
       internals.overrideHookState = overrideHookState;
       internals.overrideHookStateDeletePath = overrideHookStateDeletePath;
@@ -20695,7 +20697,7 @@ __DEV__ &&
     exports.Shape = Shape;
     exports.Surface = Surface;
     exports.Text = Text;
-    exports.version = "19.3.0-www-classic-7c6ac13e-20260929";
+    exports.version = "19.3.0-www-classic-278794d7-20261002";
     "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ &&
       "function" ===
         typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop &&

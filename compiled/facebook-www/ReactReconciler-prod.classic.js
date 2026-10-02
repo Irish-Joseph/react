@@ -11675,10 +11675,13 @@ module.exports = function ($$$config) {
                 JSCompiler_inline_result,
                 !1
               );
-              if (
-                2 !== JSCompiler_inline_result &&
-                6 !== JSCompiler_inline_result
-              ) {
+              if (6 === JSCompiler_inline_result)
+                wasRootDehydrated ||
+                  (root.errorRecoveryDisabledLanes =
+                    root.errorRecoveryDisabledLanes |
+                    renderWasConcurrent |
+                    workInProgressDeferredLane);
+              else if (2 !== JSCompiler_inline_result) {
                 if (
                   workInProgressRootDidAttachPingListener &&
                   !wasRootDehydrated
@@ -14731,7 +14734,7 @@ module.exports = function ($$$config) {
       version: rendererVersion,
       rendererPackageName: rendererPackageName,
       currentDispatcherRef: ReactSharedInternals,
-      reconcilerVersion: "19.3.0-www-classic-7c6ac13e-20260929"
+      reconcilerVersion: "19.3.0-www-classic-278794d7-20261002"
     };
     null !== extraDevToolsConfig &&
       (internals.rendererConfig = extraDevToolsConfig);
